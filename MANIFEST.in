@@ -1,0 +1,6 @@
+include LICENSE README.md CHANGELOG.md CONTRIBUTING.md SECURITY.md requirements-dev.txt
+recursive-include harsieve *.css *.js
+recursive-include tests *.py
+recursive-include docs *.md *.png
+recursive-include .github *.yml CODEOWNERS *.md
+global-exclude __pycache__ *.py[cod]

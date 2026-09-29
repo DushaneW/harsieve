@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "harsieve"
+version = "0.1.0"
+description = "Turn private HAR captures into pseudonymized debugging bundles. Offline. No runtime dependencies."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{name = "DushaneW"}]
+dependencies = []
+keywords = ["har", "privacy", "devtools", "debugging", "sanitizer"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Programming Language :: Python :: 3",
+  "Topic :: Software Development :: Debuggers",
+]
+
+[project.scripts]
+harsieve = "harsieve.cli:main"
+
+[project.urls]
+Repository = "https://github.com/DushaneW/harsieve"
+Issues = "https://github.com/DushaneW/harsieve/issues"
+
+[tool.setuptools.packages.find]
+include = ["harsieve*"]
+
+[tool.setuptools.package-data]
+harsieve = ["report.css", "report.js"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "S"]
+ignore = ["E501"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S101", "S603"]
+
+# HTML select elements trigger the SQL heuristic; this module uses no SQL.
+"harsieve/report.py" = ["S608"]

@@ -1,0 +1,19 @@
+name: Bug report
+description: Report a reproducible issue using synthetic data only.
+body:
+  - type: markdown
+    attributes:
+      value: "Do not attach real HAR files. They can contain credentials and private data."
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Synthetic reproduction and environment
+      description: Include Python version, OS and commands. No real captures.
+    validations:
+      required: true
