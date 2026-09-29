@@ -93,8 +93,8 @@ def render(clean: dict, audit: dict) -> str:
     <span class="check">✓</span>
     <strong>Metadata-only profile</strong>
     <dl>
-      <div><dt>ORIGINS</dt><dd>{audit['origins_aliased']}</dd></div>
-      <div><dt>PATHS</dt><dd>{audit['paths_aliased']}</dd></div>
+      <div><dt>ORIGINS</dt><dd>{audit["origins_aliased"]}</dd></div>
+      <div><dt>PATHS</dt><dd>{audit["paths_aliased"]}</dd></div>
       <div><dt>EXTERNAL RESOURCES</dt><dd>NONE</dd></div>
     </dl>
   </aside>
